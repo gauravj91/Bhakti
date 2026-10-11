@@ -12,6 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: unzip -q BhaktiAlarm-source.zip -d app
+      - run: if [ -d assets ]; then cp -r assets/. app/assets/; fi
       - uses: actions/setup-node@v4
         with: { node-version: 20 }
       - uses: actions/setup-java@v4
